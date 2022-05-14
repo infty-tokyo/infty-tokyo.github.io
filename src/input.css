@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "https://fonts.googleapis.com/css?family=Kreon:300,700";
+
+:root {
+  --infty-font-size: 16px;
+  --infty-mobile-font-size: 12px;
+  --infty-header-height: 76px;
+  --infty-mobile-header-height: 58px;
+  --infty-sidebar-width: 192px;
+  -webkit-text-size-adjust: 100%;
+  --active-color: #44b700;
+  --color-winered-light: #9b252f;
+  --color-winered-dark: #6e1a23;
+  --color-cream-light: #f4f1e2;
+  --color-cream-dark: #e5debc;
+  --color-logo-outline: #d18733;
+}
+
+.reset-fontsize * {
+  font-size: var(--infty-font-size);
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth !important;
+  font-size: var(--infty-font-size);
+}
+
+/* Breakpoints for mui "sm" */
+@media (max-width: 600px) {
+  html,
+  body {
+    font-size: var(--infty-mobile-font-size);
+  }
+  input,
+  input::-webkit-input-placeholder,
+  textarea,
+  textarea::-webkit-input-placeholder {
+    font-size: var(--infty-mobile-font-size) !important;
+  }
+  .reset-fontsize * {
+    font-size: var(--infty-mobile-font-size) !important;
+  }
+}
+
+/* <--- Painted Animation Text --- */
+.painting-text {
+  position: relative;
+  display: inline-block;
+}
+.painting-text::before {
+  @apply absolute top-0 bottom-0 bg-white;
+  left: 0%;
+  right: 100%;
+  content: "";
+}
+.painting {
+  animation: painting-show 2.5s forwards;
+}
+.painting::before {
+  animation: painting-text 2.5s ease-in-out;
+}
+@keyframes painting-text {
+  0% {
+    left: 0%;
+    right: 100%;
+  }
+  50% {
+    left: 0%;
+    right: 0%;
+  }
+  100% {
+    left: 100%;
+    right: 0%;
+  }
+}
+@keyframes painting-show {
+  0%,
+  50% {
+    color: transparent;
+  }
+  50.00001%,
+  100% {
+  }
+}
+
+/* --- END Painted Animation Text ---> */
+
+.dashed-shadow {
+  @apply relative top-2 left-2 pb-2 inline-block text-black;
+}
+
+@keyframes dash-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.dashed-shadow:before {
+  @apply absolute block -top-2 -left-2 -bottom-1 -right-1 z-10;
+  content: " ";
+  background-image: linear-gradient(
+    45deg,
+    var(--color-winered-light) 12.5%,
+    rgba(232, 227, 199, 0) 12.5%,
+    rgba(232, 227, 199, 0) 37.5%,
+    var(--color-winered-light) 37.5%,
+    var(--color-winered-light) 62.5%,
+    rgba(232, 227, 199, 0) 62.5%,
+    rgba(232, 227, 199, 0) 87.5%,
+    var(--color-winered-light) 87.5%
+  );
+  background-size: 6px 6px;
+}
+
+.dashed-shadow:hover:before {
+  animation: dash-animation 30s infinite linear;
+}
+
+.dashed-shadow span.text-shadow {
+  position: relative;
+}
+.dashed-shadow span.text-shadow:after {
+  content: attr(data-text);
+  @apply absolute -left-2 -top-0 z-20;
+  text-shadow: 3px 3px var(--color-winered-light);
+}
+.dashed-shadow span.text-shadow-white:after {
+  color: white;
+}
+.dashed-shadow span.text-shadow-black:after {
+  color: black;
+}
