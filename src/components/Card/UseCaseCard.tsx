@@ -14,7 +14,7 @@ const UseCaseCard: React.FC<UseCaseCardProps> = ({ degree, className, ...props }
   const usecase: UseCase = useCaseData.find((e: UseCase) => e.degree === degree)!;
 
   return (
-    <div className="w-72">
+    <div className={`w-72 ${className}`}>
       {/* <--- Worries --- */}
       <div className="border-black border-2 rounded relative">
         <div className="balloon-callout">{usecase.degree_ja}</div>
@@ -35,7 +35,7 @@ const UseCaseCard: React.FC<UseCaseCardProps> = ({ degree, className, ...props }
 
       {/* <--- Solutions --- */}
       <div className="bg-winered-light text-white rounded">
-        <div className="mx-10 text-sm font-bold py-6">{usecase.solution}</div>
+        <div className="mx-6 text-xl font-bold py-6">{usecase.solution}</div>
         <div className="flex w-full object-center pb-6">
           <DialogImage
             src={usecase.src_screen}

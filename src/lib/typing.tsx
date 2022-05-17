@@ -21,7 +21,7 @@ export class TextScramble {
 
   constructor({
     el,
-    chars = "!<>-_\\/[]{}—=+*^?#________",
+    chars = "!<>-_\\/[]{}—=+*^?#___abcdefghijklmnopqrstuvwxyz",
     emClassName = "text-bold",
     weakClassName = "opacity-20",
   }: {

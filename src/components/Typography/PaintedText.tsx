@@ -12,7 +12,7 @@ const PaintedText: React.FC<PaintedProps> = ({ children, delay = 0, ...props }) 
   );
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      setClassName((prev: string) => `${prev.slice(16)} painting`);
+      setClassName((prev: string) => `${prev.slice(17)} painting`);
     }, delay * 1000);
     return () => {
       clearTimeout(timer);

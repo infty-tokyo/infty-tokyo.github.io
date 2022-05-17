@@ -4,7 +4,7 @@ const MyDocument = () => {
   return (
     <Html lang="ja-JP">
       <Head>
-        <meta name="application-name" content="MyApp" />
+        <meta name="application-name" content="Infty" />
       </Head>
       <body>
         <Main />

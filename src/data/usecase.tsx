@@ -26,7 +26,7 @@ export const useCaseData: UseCase[] = [
     src_worry: "/use-case/b3.png",
     src_screen: "/screen/article.png",
     worries: "海外の大学院に進学してみたいけれど、どう進めれば良いのだろう。",
-    solution: "Articleで、学年・学部を超えて海外進学の対策や院試対策の情報を入手できる！",
+    solution: "学年・学部を超えて海外進学の対策や院試対策の情報を入手できる！",
   },
   {
     degree: "M1",
@@ -34,7 +34,7 @@ export const useCaseData: UseCase[] = [
     src_worry: "/use-case/m1.png",
     src_screen: "/screen/video.png",
     worries: "修士論文は進まないし、研究室以外の人との交流もなく、行き詰まっている。",
-    solution: "分野の垣根を超えた様々な学生とであることができ、自分の研究のヒントになるかも！？",
+    solution: "分野の垣根を超えた様々な学生との交流が、自分の研究のヒントになるかも！？",
   },
   {
     degree: "D2",
