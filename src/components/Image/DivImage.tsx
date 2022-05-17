@@ -4,13 +4,17 @@ import Image, { ImageProps } from "next/image";
 
 import { DivProps } from "types";
 
-type LogoProps = {
+export type DivImageProps = {
+  src: string;
+  alt: string;
   className?: string;
   layout?: "fixed" | "fill" | "intrinsic" | "responsive" | "raw" | undefined;
   objectFit?: ImageProps["objectFit"];
 } & DivProps;
 
-const Logo: React.FC<LogoProps> = ({
+const DivImage: React.FC<DivImageProps> = ({
+  src,
+  alt,
   className = "",
   layout = "fill",
   objectFit = "contain",
@@ -18,9 +22,9 @@ const Logo: React.FC<LogoProps> = ({
 }) => {
   return (
     <div {...props} className={`relative ${className}`}>
-      <Image src="/icon.png" alt="logo" layout={layout} objectFit={objectFit} />
+      <Image src={src} alt={alt} layout={layout} objectFit={objectFit} />
     </div>
   );
 };
 
-export default Logo;
+export default DivImage;

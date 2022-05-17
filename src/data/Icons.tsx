@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Logo from "components/Logo";
+import LogoImage from "components/Image/LogoImage";
 import { SvgIconProps } from "@mui/material/SvgIcon";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
@@ -13,7 +13,7 @@ export type IconType = {
 };
 
 export const IconData: IconType[] = [
-  { sns: "infty", Icon: Logo, href: "https://infty.tokyo", className: "" },
+  { sns: "infty", Icon: LogoImage, href: "https://infty.tokyo", className: "" },
   {
     sns: "twitter",
     Icon: TwitterIcon,

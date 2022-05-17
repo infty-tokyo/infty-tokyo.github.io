@@ -9,16 +9,18 @@ import Link from "next/link";
 type LayoutProps = {
   height?: number;
 } & DivProps;
-
 const Layout: React.FC<LayoutProps> = ({ children, height = 50, ...props }) => {
   return (
-    <div className="bg-slate-100">
-      <div className="overflow-y-scroll">{children}</div>
+    <div className="bg-cream-light">
       <div
+        className="overflow-y-scroll h-screen w-screen"
         style={{
-          marginTop: height,
+          paddingBottom: height,
         }}
       >
+        {children}
+      </div>
+      <div>
         <div
           {...props}
           className={`absolute flex items-center bottom-0 w-full z-50 text-white bg-black border-t-2  ${
@@ -29,7 +31,7 @@ const Layout: React.FC<LayoutProps> = ({ children, height = 50, ...props }) => {
           <Box className="flex mr-auto ml-4 space-x-2">
             {IconData.map((e: IconType) => (
               <Link href={e.href} key={e.sns}>
-                <a>
+                <a target="_blank" rel="noreferrer">
                   <e.Icon className={`w-8 h-8 hover:opacity-60 ${e.className}`} />
                 </a>
               </Link>

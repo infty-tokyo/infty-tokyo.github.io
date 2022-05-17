@@ -10,6 +10,7 @@ module.exports = {
         "winered-dark": "#6e1a23",
         "cream-light": "#f4f1e2",
         "cream-dark": "#e5debc",
+        "google-blue": "#4285f4",
         // Ranking Color
         "gold-light": "#af9500",
         "gold-dark": "#c9b037",
