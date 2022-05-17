@@ -8,6 +8,17 @@ on:
 
 jobs:
   build:
+    permissions:
+      actions: write
+      checks: write
+      contents: write
+      deployments: write
+      issues: write
+      packages: write
+      pull-requests: write
+      repository-projects: write
+      security-events: write
+      statuses: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -31,17 +42,6 @@ jobs:
         run: touch ./out/.nojekyll
 
       - name: Deploy to GitHub Pages
-        permissions:
-          actions: write
-          checks: write
-          contents: write
-          deployments: write
-          issues: write
-          packages: write
-          pull-requests: write
-          repository-projects: write
-          security-events: write
-          statuses: write
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
