@@ -37,7 +37,7 @@ const Layout: React.FC<LayoutProps> = ({
         <div>
           <div
             {...props}
-            className={`absolute flex items-center bottom-0 w-full z-50 text-white bg-black border-t-2  ${
+            className={`fixed flex items-center bottom-0 w-full z-50 text-white bg-black border-t-2  ${
               props.className || ""
             }`}
             style={{ height: height }}
