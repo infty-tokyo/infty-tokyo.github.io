@@ -1,7 +1,6 @@
-name: Github pages
+name: Deploy Github Pages
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Setup node
         uses: actions/setup-node@v2
