@@ -17,7 +17,7 @@ const PaintedText: React.FC<PaintedProps> = ({ children, delay = 0, ...props }) 
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [delay]);
 
   return (
     <div {...props} className={className}>

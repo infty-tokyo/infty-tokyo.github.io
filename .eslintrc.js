@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   root: true,
   env: {
@@ -9,14 +11,20 @@ module.exports = {
     sourceType: "module",
     ecmaVersion: 2020,
     tsconfigRootDir: __dirname,
-    project: ["./tsconfig.eslint.json"],
+    project: path.join(__dirname, "tsconfig.eslint.json"),
   },
   plugins: ["@typescript-eslint"],
   extends: [
     "eslint:recommended",
+    "next",
+    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
   ],
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@next/next/no-img-element": "off",
+  },
 };

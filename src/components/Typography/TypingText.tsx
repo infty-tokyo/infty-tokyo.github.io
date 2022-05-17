@@ -5,7 +5,6 @@ import { TextScramble, TypingStringInfo } from "lib/typing";
 import { DivProps } from "types";
 
 type TypingTextProps = {
-  delay?: number;
   emClassName?: string;
   weakClassName?: string;
   phrases?: TypingStringInfo[];
@@ -17,7 +16,6 @@ const TypingText: React.FC<TypingTextProps> = ({
   emClassName = "font-bold",
   weakClassName = "",
   phrases = [],
-  delay = 0,
   className = "",
   ...props
 }) => {
@@ -31,7 +29,7 @@ const TypingText: React.FC<TypingTextProps> = ({
         weakClassName: weakClassName,
       });
       let counter: number = 0;
-      const next: Function = () => {
+      const next: () => void = () => {
         fx.setText(phrases[counter]).then(() => {
           setTimeout(next, 800);
         });
@@ -39,7 +37,7 @@ const TypingText: React.FC<TypingTextProps> = ({
       };
       next();
     }
-  }, []);
+  }, [emClassName, weakClassName, phrases]);
 
   return (
     <div {...props} className={className} ref={ref}>

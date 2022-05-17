@@ -16,7 +16,7 @@ export class TextScramble {
   weakClassName: string;
   queue: TypingScrambleInfo[];
   frame: number;
-  resolve?: Function;
+  resolve?: (value: unknown) => void;
   frameRequest?: number;
 
   constructor({
@@ -45,11 +45,11 @@ export class TextScramble {
     this.queue = [];
 
     for (let i = 0; i < length; i++) {
-      let from: string = oldText[i] || "";
-      let to: string = text[i] || "";
-      let start: number = Math.floor(Math.random() * 40);
-      let end: number = start + Math.floor(Math.random() * 60);
-      let emphasis: boolean = ((2 ** (text.length - i - 1)) & code) > 0;
+      const from: string = oldText[i] || "";
+      const to: string = text[i] || "";
+      const start: number = Math.floor(Math.random() * 40);
+      const end: number = start + Math.floor(Math.random() * 60);
+      const emphasis: boolean = ((2 ** (text.length - i - 1)) & code) > 0;
       this.queue.push({ from, to, start, end, emphasis });
     }
 
@@ -63,7 +63,8 @@ export class TextScramble {
     let output: string = "";
     let complete: number = 0;
     for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char, emphasis } = this.queue[i];
+      const { from, to, start, end, emphasis } = this.queue[i];
+      let { char } = this.queue[i];
       if (this.frame >= end) {
         complete++;
         output += emphasis ? `<span class="${this.emClassName}">${to}</span>` : to;
@@ -79,7 +80,7 @@ export class TextScramble {
     }
     this.el.innerHTML = output;
     if (complete === this.queue.length) {
-      this.resolve!();
+      this.resolve!(null);
     } else {
       this.frameRequest = requestAnimationFrame(this.update);
       this.frame++;

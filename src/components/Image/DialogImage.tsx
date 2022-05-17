@@ -1,24 +1,23 @@
 import * as React from "react";
 
-import Dialog, { DialogProps } from "@mui/material/Dialog";
 import DivImage, { DivImageProps } from "components/Image/DivImage";
-import Image, { ImageProps } from "next/image";
 
-import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
-import DialogActions from "@mui/material/DialogActions";
+import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { DivProps } from "types";
 import IconButton from "@mui/material/IconButton";
-import { maxWidth } from "@mui/system";
 
-type DialogImageProps = {} & DivImageProps;
+type DialogImageProps = {
+  width?: string;
+  height?: string;
+} & DivImageProps;
 
 const DialogImage: React.FC<DialogImageProps> = ({
   src,
   alt,
+  width = "80vw",
+  height = "80vh",
   className = "",
   layout = "fill",
   objectFit = "contain",
@@ -50,9 +49,9 @@ const DialogImage: React.FC<DialogImageProps> = ({
         scroll="paper"
         PaperProps={{
           style: {
-            width: "80vw",
-            height: "80vh",
-            maxWidth: "80vw",
+            width: width,
+            maxWidth: width,
+            height: height,
           },
         }}
       >

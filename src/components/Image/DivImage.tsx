@@ -22,7 +22,8 @@ const DivImage: React.FC<DivImageProps> = ({
 }) => {
   return (
     <div {...props} className={`relative ${className}`}>
-      <Image src={src} alt={alt} layout={layout} objectFit={objectFit} />
+      <img src={src} alt={alt} className="w-full h-full object-contain" />
+      {/* <Image src={src} alt={alt} layout={layout} objectFit={objectFit} /> */}
     </div>
   );
 };
