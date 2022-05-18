@@ -33,6 +33,8 @@ jobs:
         run: npm ci
 
       - name: Build Next.js app
+        env:
+          NEXT_PUBLIC_GA_ID: ${{secrets.NEXT_PUBLIC_GA_ID}}
         run: npm run build
 
       - name: Export Next.js app
