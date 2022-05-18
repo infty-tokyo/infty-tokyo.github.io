@@ -9,6 +9,7 @@ import { UseCaseDegree, useCaseDegrees } from "data/usecase";
 import Box from "@mui/material/Box";
 import DivImage from "components/Image/DivImage";
 import Grid from "@mui/material/Grid";
+// import HLSVideoPlayer from "components/Video/HLSPlayer";
 import Head from "next/head";
 import Layout from "components/Layout";
 import Link from "next/link";
@@ -18,6 +19,7 @@ import { META_DESCRIPTION } from "data/const";
 import { Navigation } from "swiper";
 import type { NextPage } from "next";
 import PaintedText from "components/Typography/PaintedText";
+// import ReactVideoPlayer from "components/Video/ReactPlayer";
 import TypingText from "components/Typography/TypingText";
 import UseCaseCard from "components/Card/UseCaseCard";
 
@@ -74,7 +76,7 @@ const Home: NextPage = () => {
                     </a>
                   </Link>
                   <TypingText
-                    className="absolute text-xl z-50 left-0 -bottom-6 sm:-bottom-2"
+                    className="absolute text-lg z-50 left-0 -bottom-6 sm:-bottom-2"
                     phrases={[
                       { text: "私からあなたへ。", code: 0b10011100 },
                       { text: '"学び"を共有し、', code: 0b111101100 },
