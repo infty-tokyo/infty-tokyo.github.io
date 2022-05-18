@@ -41,6 +41,9 @@ jobs:
       - name: add nojekyll
         run: touch ./out/.nojekyll
 
+      - name: add google verification
+        run: mv google-site-verification.html ./out/googlee7ebc9d418167264.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
